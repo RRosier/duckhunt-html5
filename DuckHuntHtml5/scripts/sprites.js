@@ -23,8 +23,8 @@
             p.speed = Math.random() * 20 + 180;
             p.isShot = false;
             p.isFlyAway = false;
-            p.duckIndex = randomFromInterval(1, 4) - 1; //randomFromInterval(1, 3) - 1;
-            p.duckType = Q.BUGS[p.duckIndex]; // Q.DUCKS[p.duckIndex];
+            p.duckIndex = randomFromInterval(1, 3) - 1; //randomFromInterval(1, 4) - 1; //
+            p.duckType = Q.DUCKS[p.duckIndex]; //Q.BUGS[p.duckIndex]; // 
 
             this._super(p, {
                 x: randomFromInterval(1, Q.width),
@@ -32,7 +32,7 @@
                 dx: Math.random() < 0.5 ? -1 : 1,
                 dy: -1,
                 sheet: p.duckType,
-                sprite: "bug", // "duck",
+                sprite: "duck", //"bug", // "duck",
                 scale: 1.5
             });
 
