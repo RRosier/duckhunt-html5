@@ -5,7 +5,7 @@
 
     Q.scene("endScene", function (stage) {
 
-        createTimesheet(Q.DUCK_COUNT, Q.DUCKS, Q.state.get('username')); //Q.BUGS_COUNT, Q.BUGS, Q.state.get('username'));// 
+        //createTimesheet(Q.DUCK_COUNT, Q.DUCKS, Q.state.get('username')); //Q.BUGS_COUNT, Q.BUGS, Q.state.get('username'));// 
     });
 
     Q.scene("duckScene", function (stage) {
