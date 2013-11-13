@@ -2,7 +2,7 @@
     return Math.floor(Math.random() * (to - from + 1) + from);
 }
 
-function startGameCanvas(username) { // wait until the window is fully loaded
+window.addEventListener("load", function () { // wait until the window is fully loaded
 
     // create Quintus instance
     var Q = new Quintus()
@@ -21,18 +21,6 @@ function startGameCanvas(username) { // wait until the window is fully loaded
         { day: "Thursday", ducks: [{ name: "black_duck", count: 0 }, { name: "brown_duck", count: 0 }, { name: "blue_duck", count: 0 }] },
         { day: "Friday", ducks: [{ name: "black_duck", count: 0 }, { name: "brown_duck", count: 0 }, { name: "blue_duck", count: 0 }] },
     ];
-
-    /* specific timesheet adaptations */
-    //Q.BUGS = ["bug", "feature", "request", "barbie"];
-    //Q.BUGS_COUNT = [
-    //    { day: "Monday", ducks: [{ name: "bug", count: 0 }, { name: "feature", count: 0 }, { name: "request", count: 0 }, { name: "barbie", count: 0 }] },
-    //    { day: "Tuesday", ducks: [{ name: "bug", count: 0 }, { name: "feature", count: 0 }, { name: "request", count: 0 }, { name: "barbie", count: 0 }] },
-    //    { day: "Wednesday", ducks: [{ name: "bug", count: 0 }, { name: "feature", count: 0 }, { name: "request", count: 0 }, { name: "barbie", count: 0 }] },
-    //    { day: "Thursday", ducks: [{ name: "bug", count: 0 }, { name: "feature", count: 0 }, { name: "request", count: 0 }, { name: "barbie", count: 0 }] },
-    //    { day: "Friday", ducks: [{ name: "bug", count: 0 }, { name: "feature", count: 0 }, { name: "request", count: 0 }, { name: "barbie", count: 0 }] },
-    //];
-
-    Q.state.reset({ username: username });
 
     // set the animations
     Q.animations("duck", {
@@ -53,18 +41,9 @@ function startGameCanvas(username) { // wait until the window is fully loaded
         show_two: { frames: [7], rate: 2 / 1 }
     });
 
-    //Q.animations("bug", {
-    //    fly_up: { frames: [4, 6, 5], rate: 1 / 4 },
-    //    fly_straight: { frames: [6, 8, 10], rate: 1 / 4 },
-    //    fly_away: { frames: [1, 2, 7], rate: 1 / 4 },
-    //    shot: { frames: [2], next: "fall", rate: 1 / 1, trigger: "shot" },
-    //    fall: { frames: [0, 3], rate: 1 / 4 }
-    //});
-
     // load the assets
-    Q.load(["sprites.png", "sprites.json"], function () { // , "timesheetsprites.png", "timesheetsprites.json"
+    Q.load(["sprites.png", "sprites.json"], function () {
         Q.compileSheets("sprites.png", "sprites.json");
-        //Q.compileSheets("timesheetsprites.png", "timesheetsprites.json");
 
         // set the stage
         //Q.stageScene("duckScene", 0);
@@ -74,4 +53,4 @@ function startGameCanvas(username) { // wait until the window is fully loaded
             day: Q.WEEKDAYS[Q.CurrentDay++]
         });
     });
-};
+});

@@ -4,8 +4,6 @@
     });
 
     Q.scene("endScene", function (stage) {
-
-        //createTimesheet(Q.DUCK_COUNT, Q.DUCKS, Q.state.get('username')); //Q.BUGS_COUNT, Q.BUGS, Q.state.get('username'));// 
     });
 
     Q.scene("duckScene", function (stage) {
@@ -15,7 +13,6 @@
         stage.hit = function (duckIndex) {
 
             Q.DUCK_COUNT[Q.CurrentDay - 1].ducks[duckIndex].count++;
-            //Q.BUGS_COUNT[Q.CurrentDay - 1].ducks[duckIndex].count++;
 
             duckHits++;
             // both ducks have been shot, don't show the timeout
